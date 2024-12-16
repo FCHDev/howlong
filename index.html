@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculateur de Jours de Vie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="toggleTheme" class="theme-toggle">
+      <span class="theme-icon">🌙</span> Mode nuit
+    </button>
+    <div class="container">
+      <h1>Calculateur de Jours de Vie</h1>
+      <div class="form">
+        <div class="input-group">
+          <label for="prenom">Prénom :</label>
+          <input type="text" id="prenom" required />
+        </div>
+        <div class="input-group">
+          <label for="dateNaissance">Date de naissance :</label>
+          <input type="date" id="dateNaissance" required />
+        </div>
+        <div class="input-group">
+          <label>Genre :</label>
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="garcon"
+              name="genre"
+              value="garcon"
+              checked
+            />
+            <label for="garcon">Garçon</label>
+            <input type="radio" id="fille" name="genre" value="fille" />
+            <label for="fille">Fille</label>
+          </div>
+        </div>
+        <div class="buttons-group">
+          <button onclick="calculer()">Calculer</button>
+          <button onclick="reset()" class="btn-reset">Réinitialiser</button>
+        </div>
+      </div>
+      <div id="resultats" class="resultats hidden">
+        <h2>Résultats pour <span id="nomResultat"></span></h2>
+        <p>Vous êtes sur Terre depuis <span id="joursVecus"></span> jours</p>
+        <p>
+          Il vous reste environ <span id="joursRestants"></span> jours à vivre
+        </p>
+        <p>
+          Votre prochain anniversaire est dans
+          <span id="joursAnniversaire"></span> jours
+        </p>
+        <p>
+          Vous aurez <b><span id="prochaineAge"></span> ans</b>
+        </p>
+      </div>
+    </div>
+    <div class="historique">
+      <h2>Historique</h2>
+      <div id="listeHistorique" class="liste-historique">
+        <!-- Les résultats seront ajoutés ici dynamiquement -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
